@@ -49,8 +49,7 @@ public class UserService {
         }
 
         long userCount = userRepository.count();
-        boolean adminExists = userRepository.findAll().stream()
-                .anyMatch(u -> u.getRole() == Role.ADMIN);
+        boolean adminExists = userRepository.existsByRole(Role.ADMIN);
 
         if (!adminExists && userCount == 0) {
             user.setRole(Role.ADMIN);
