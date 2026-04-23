@@ -2,8 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./HomePage.css";
 
+import sliitImg from "../../assets/sliit.jpg";
+
 const IMAGES = {
-  heroBg:   "https://images.unsplash.com/photo-1562774053-701939374585?w=1800&q=80",
+  heroBg:   sliitImg,
   room:     "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
   lab:      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80",
   building: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&q=80",
@@ -106,14 +108,10 @@ export default function HomePage() {
           <img src={IMAGES.heroBg} alt="campus" className="hero-bg-img" />
           <div className="hero-img-overlay" />
         </div>
-        <div className="hero-grid" />
-        <div className="hero-scanline" />
+
 
         <div className={`hero-content ${loaded ? "hero-in" : ""}`}>
-          <div className="hero-kicker">
-            <div className="kicker-dot" />
-            Smart Campus Management System
-          </div>
+
 
           <h1 className="hero-heading">
             <span className="hh-sub">The Smarter</span>
@@ -131,14 +129,7 @@ export default function HomePage() {
             <Link to="/register" className="cta-outline">Create Account</Link>
           </div>
 
-          <div className="hero-metrics">
-            {stats.map(s => (
-              <div key={s.label} className="hero-metric">
-                <div className="hm-num">{s.num}</div>
-                <div className="hm-label">{s.label}</div>
-              </div>
-            ))}
-          </div>
+
         </div>
 
         <div className="hero-ticker">
@@ -152,15 +143,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══════════ STATS ═══════════ */}
-      <section className="hp-stats">
-        {stats.map((s, i) => (
-          <RevealSection key={s.label} delay={i * 90}>
-            <div className="stat-num">{s.num}</div>
-            <div className="stat-label">{s.label}</div>
-          </RevealSection>
-        ))}
-      </section>
+
 
       {/* ═══════════ INTRO ═══════════ */}
       <section className="hp-intro">
