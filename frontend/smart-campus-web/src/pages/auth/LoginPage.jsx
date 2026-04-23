@@ -69,17 +69,19 @@ const LoginPage = () => {
 
       const response = await login(credentials);
 
+      // authService returns response.data directly
+      // token is already saved in authService, extract role here
       const token =
-        response?.data?.token ||
-        response?.data?.accessToken ||
         response?.token ||
-        response?.accessToken;
+        response?.accessToken ||
+        response?.data?.token ||
+        response?.data?.accessToken;
 
       const role =
-        response?.data?.role ||
         response?.role ||
-        response?.data?.user?.role ||
-        response?.user?.role;
+        response?.data?.role ||
+        response?.user?.role ||
+        response?.data?.user?.role;
 
       if (!token) {
         throw new Error("Login succeeded but token was not returned.");
@@ -120,7 +122,7 @@ const LoginPage = () => {
   };
 
   const handleGoogleLogin = () => {
-    window.location.href = "http://localhost:8080/oauth2/authorization/google";
+    window.location.href = "http://localhost:8081/oauth2/authorization/google";
   };
 
   return (
