@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
+@SuppressWarnings("null")
 public class OllamaService {
 
     private final RestTemplate restTemplate;
@@ -43,11 +44,11 @@ public class OllamaService {
         HttpEntity<Map<String, Object>> entity = new HttpEntity<>(requestBody, headers);
 
         try {
-            ResponseEntity<Map> response = restTemplate.exchange(
+            ResponseEntity<Map<String, Object>> response = restTemplate.exchange(
                     url,
                     HttpMethod.POST,
                     entity,
-                    Map.class
+                    new org.springframework.core.ParameterizedTypeReference<Map<String, Object>>() {}
             );
 
             Map<?, ?> body = response.getBody();

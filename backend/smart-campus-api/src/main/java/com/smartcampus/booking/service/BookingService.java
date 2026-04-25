@@ -22,6 +22,7 @@ import com.smartcampus.user.repository.UserRepository;
 
 @Service
 @Transactional
+@SuppressWarnings("null")
 public class BookingService {
     
     private final BookingRepository bookingRepository;
