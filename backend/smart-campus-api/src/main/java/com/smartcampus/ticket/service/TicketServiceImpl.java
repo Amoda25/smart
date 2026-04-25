@@ -29,6 +29,7 @@ import com.smartcampus.user.repository.UserRepository;
 
 
 @Service
+@SuppressWarnings("null")
 public class TicketServiceImpl implements TicketService {
 
     private final TicketRepository ticketRepository;

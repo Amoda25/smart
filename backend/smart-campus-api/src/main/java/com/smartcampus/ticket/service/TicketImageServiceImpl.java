@@ -23,6 +23,7 @@ import com.smartcampus.ticket.repository.TicketRepository;
 
 
 @Service
+@SuppressWarnings("null")
 public class TicketImageServiceImpl implements TicketImageService {
 
     private final TicketImageRepository ticketImageRepository;

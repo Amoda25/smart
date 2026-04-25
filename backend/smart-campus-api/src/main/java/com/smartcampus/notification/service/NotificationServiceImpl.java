@@ -13,6 +13,7 @@ import com.smartcampus.notification.model.NotificationType;
 import com.smartcampus.notification.repository.NotificationRepository;
 
 @Service
+@SuppressWarnings("null")
 public class NotificationServiceImpl implements NotificationService {
 
     private final NotificationRepository notificationRepository;

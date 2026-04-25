@@ -10,6 +10,7 @@ import com.smartcampus.ticket.model.Comment;
 import com.smartcampus.ticket.repository.CommentRepository;
 
 @Service
+@SuppressWarnings("null")
 public class CommentServiceImpl implements CommentService {
 
     private final CommentRepository commentRepository;
